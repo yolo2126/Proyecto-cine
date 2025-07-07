@@ -1,0 +1,82 @@
+/* === Fondo general oscuro morado === */
+body {
+  background-color: #2c0e3a;  /* morado oscuro */
+  color: #e0c7f7;             /* lila claro */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === Títulos y encabezados === */
+h1, h2, h3, .display-3 {
+  color: #d3b3f9; /* lila suave */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* === Enlaces === */
+a {
+  color: #e83e8c;
+  text-decoration: none;
+}
+a:hover {
+  color: #c7256e;
+  text-decoration: underline;
+}
+
+/* === Botones primarios (rosa vibrante) === */
+.btn-primary {
+  background-color: #e83e8c;
+  border-color: #e83e8c;
+  color: white;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background-color: #c7256e;
+  border-color: #c7256e;
+}
+
+/* === Navbar === */
+.navbar {
+  background-color: #3f1465 !important;  /* morado oscuro más claro */
+  border-bottom: 2px solid #6f42c1;
+}
+.navbar-brand,
+.nav-link {
+  color: #e0c7f7 !important; /* texto lila claro */
+}
+.nav-link:hover {
+  color: #e83e8c !important; /* rosa vibrante */
+}
+
+/* === Footer === */
+footer {
+  background-color: #3f1465;
+  color: #d3b3f9;
+  font-weight: 500;
+}
+
+/* === Newsletter en footer === */
+section.bg-dark.text-white {
+  background-color: #4a1a7b !important; /* morado intermedio */
+  color: #e0c7f7 !important;
+}
+section.bg-dark.text-white h5 {
+  color: #e83e8c !important;
+}
+section.bg-dark.text-white input,
+section.bg-dark.text-white button {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+  color: white;
+}
+
+/* === Botón del newsletter en el footer === */
+section.bg-dark.text-white button {
+  background-color: #e83e8c;
+  border-color: #e83e8c;
+  color: white;
+}
+section.bg-dark.text-white button:hover {
+  background-color: #c7256e;
+  border-color: #c7256e;
+  color: white;
+}

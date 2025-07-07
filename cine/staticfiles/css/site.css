@@ -1,0 +1,70 @@
+/* === Paleta morada personalizada para Miau Pelis === */
+
+:root {
+  --morado-oscuro: #1e0036;
+  --morado-intermedio: #3c096c;
+  --morado: #7b2cbf;
+  --morado-claro: #9d4edd;
+  --lavanda: #e0aaff;
+  --blanco: #ffffff;
+  --gris: #cdd9e5;
+}
+
+body {
+  background-color: var(--morado-oscuro);
+  color: var(--lavanda);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+  background-color: var(--morado-intermedio) !important;
+}
+
+.navbar .nav-link {
+  color: var(--lavanda) !important;
+}
+
+.navbar .nav-link:hover {
+  color: var(--blanco) !important;
+}
+
+.navbar-brand img {
+  filter: drop-shadow(0 0 5px var(--lavanda));
+}
+
+.btn-primary {
+  background-color: var(--morado);
+  border-color: var(--morado);
+}
+
+.btn-primary:hover {
+  background-color: var(--morado-claro);
+  border-color: var(--morado-claro);
+}
+
+footer {
+  background-color: var(--morado-intermedio);
+  color: var(--lavanda);
+}
+
+section {
+  background-color: var(--morado-oscuro);
+  color: var(--lavanda);
+}
+
+/* Formularios */
+input.form-control, select.form-control, textarea.form-control {
+  background-color: #2a0055;
+  color: var(--lavanda);
+  border: 1px solid var(--lavanda);
+}
+
+input.form-control:focus {
+  border-color: var(--morado-claro);
+  box-shadow: 0 0 0 0.2rem rgba(157, 78, 221, 0.25);
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5 {
+  color: var(--lavanda);
+}

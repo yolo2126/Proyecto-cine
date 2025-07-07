@@ -1,4 +1,3 @@
-
 from __future__ import annotations
 from django.conf import settings
 from django.core.validators import MinValueValidator, MaxValueValidator
@@ -211,3 +210,10 @@ class OrderSnack(models.Model):
         return f'{self.qty} × {self.snack} ({self.order})'
 
 
+# ─────────────────────────────── NEWSLETTER ───────────────────────────────
+class NewsletterSubscriber(models.Model):
+    email = models.EmailField(unique=True)
+    subscribed_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email

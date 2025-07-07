@@ -1,0 +1,41 @@
+{% extends "baseHome.html" %}
+{% load static %}
+
+{% block title %}Registro | Miau Pelis{% endblock %}
+
+{% block content %}
+<div class="container py-5" style="max-width: 500px;">
+  <h2 class="mb-4">Crear una cuenta</h2>
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    
+    <div class="mb-3">
+      <label for="id_username" class="form-label">Nombre de usuario</label>
+      {{ form.username }}
+      {{ form.username.errors }}
+    </div>
+    
+    <div class="mb-3">
+      <label for="id_email" class="form-label">Correo electrónico</label>
+      {{ form.email }}
+      {{ form.email.errors }}
+    </div>
+    
+    <div class="mb-3">
+      <label for="id_password1" class="form-label">Contraseña</label>
+      {{ form.password1 }}
+      {{ form.password1.errors }}
+    </div>
+    
+    <div class="mb-3">
+      <label for="id_password2" class="form-label">Confirmar contraseña</label>
+      {{ form.password2 }}
+      {{ form.password2.errors }}
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Registrarse</button>
+  </form>
+</div>
+{% endblock %}

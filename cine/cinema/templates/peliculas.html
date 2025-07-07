@@ -1,0 +1,44 @@
+{% extends "baseHome.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container py-4">
+  <h1 class="mb-4 text-center">🎬 Películas en Cartelera</h1>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+{% for pelicula in peliculas %}
+  <div class="col">
+    <div class="card h-100 shadow-sm">
+      {% if pelicula.poster %}
+        <img src="{{ pelicula.poster.url }}" class="card-img-top" alt="Poster de {{ pelicula.title }}">
+      {% else %}
+        <img src="{% static 'img/default_poster.jpg' %}" class="card-img-top" alt="Sin póster">
+      {% endif %}
+
+      <div class="card-body">
+        <h5 class="card-title">{{ pelicula.title }}</h5>
+        {% if pelicula.synopsis %}
+          <p class="card-text text-muted">{{ pelicula.synopsis|truncatewords:25 }}</p>
+        {% else %}
+          <p class="card-text text-muted">Sinopsis no disponible.</p>
+        {% endif %}
+      </div>
+
+      <div class="card-footer text-muted small">
+        Estreno: {{ pelicula.release_date|date:"d M Y" }} | Duración: {{ pelicula.duration_min }} min
+      </div>
+
+      <div class="p-3 text-center">
+        <a href="{% url 'showtime_detail' pelicula.pk %}" class="btn btn-primary">
+          Comprar boleto
+        </a>
+      </div>
+    </div>
+  </div>
+{% empty %}
+  <p>No hay películas activas en este momento.</p>
+{% endfor %}
+
+  </div>
+</div>
+{% endblock %}
