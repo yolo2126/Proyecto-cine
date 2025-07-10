@@ -71,17 +71,31 @@ TEMPLATES = [
 WSGI_APPLICATION = 'cine.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+# # Database
+# # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'cine',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+          }
 }
 
-
+}
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -129,3 +143,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL          = 'login'
 LOGIN_REDIRECT_URL = 'home'    # o donde quieras llevar al usuario tras entrar
 LOGOUT_REDIRECT_URL= 'home'   # tras cerrar sesión
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER    = "yolandithagarxiia@gmail.com"
+EMAIL_HOST_PASSWORD= "qbal iysa fybl klfb"
